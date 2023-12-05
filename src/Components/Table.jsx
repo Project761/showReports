@@ -13,6 +13,7 @@ const Table = () => {
                                         <div className="col-12">
                                             <div className="bg-line text-white   py-1 px-2 d-flex justify-content-between align-items-center">
                                                 <p className="p-0 m-0">Incident</p>
+                                               
                                             </div>
                                             <table class="table">
                                                 <thead>
