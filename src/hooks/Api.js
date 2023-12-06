@@ -3,8 +3,11 @@ import api from "../axios/axios";
 
 // ------get API Request
 export const fetchData = async (url) => {
+
+   
     try {
         const res = await api.get(url);
+        
         const decr = DecryptedList(res.data.data)
         const TextData = JSON.parse(decr)
         return TextData.Table
