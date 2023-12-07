@@ -8,6 +8,7 @@ export const fetchData = async (url) => {
     try {
         const res = await api.get(url);
         
+        
         const decr = DecryptedList(res.data.data)
         const TextData = JSON.parse(decr)
         return TextData.Table
@@ -18,23 +19,31 @@ export const fetchData = async (url) => {
 
 // -------get DATA API With Post Request
 export const fetchPostData = async (url, postData) => {
-    const values = EncryptedList(JSON.stringify(postData));
-    const data = {
-        "Data": values
-    }
-    // console.log(data)
     try {
-        const res = await api.get(url, data);
-        // if(res.code === 'ERR_BAD_REQUEST'){
-        //     return res
-        // } else {
-        const decr = DecryptedList(res.data.data)
-        // console.log(decr)
-        const TextData = JSON.parse(decr)
-        // console.log(TextData);
-        return TextData.Table
-        // }
+        console.log('Request URL:', url);
+        console.log('Request Data:', postData);
+
+        const values = EncryptedList(JSON.stringify(postData));
+        console.log('Encrypted Data:', values);
+
+        const data = {
+            "Data": values
+        };
+        const response = await api.post(url, data);
+
+        const decr = DecryptedList(response.data.data);
+        const TextData = JSON.parse(decr);
+
+        return TextData.Table;
     } catch (error) {
-        return []
+        console.error('Error in fetchPostData:', error);
+
+        if (error.response) {
+            console.error('Response data:', error.response.data);
+            console.error('Response status:', error.response.status);
+            console.error('Response headers:', error.response.headers);
+        }
+
+        return [];
     }
 };
