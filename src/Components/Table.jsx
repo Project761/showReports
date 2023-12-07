@@ -52,7 +52,7 @@ const Table = () => {
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th colSpan={12}>Section-1</th>
+                                                        <th colSpan={12} className='text-center'>Section-1</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -73,20 +73,44 @@ const Table = () => {
                                             <hr />
                                             <table class="table">
                                                 <thead>
-                                                    <th colSpan={12}>Section-2</th>
+                                                    <th colSpan={12} className='text-center'>Section-2</th>
                                                 </thead>
-                                                <tbody>
+                                                <thead>
+                                                    <th >Fields</th>
+                                                    <th >Data</th>
+                                                    <th >Order</th>
+                                                    <th >Display</th>
+                                                </thead>
+                                                <tbody> 
                                                     <tr>
                                                         <th scope="row">2</th>
                                                         <td>Mark</td>
+                                                        <td>
+                                                            <input type="number" name="" id="" className='col-1 form-control'/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox" name="" id="" />
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">2</th>
                                                         <td>Mark</td>
+                                                        <td>
+                                                            <input type="number" name="" id="" className='col-1 form-control'/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox" name="" id="" />
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">2</th>
                                                         <td>Mark</td>
+                                                        <td>
+                                                            <input type="number" name="" id="" className='col-1 form-control'/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="checkbox" name="" id="" />
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
